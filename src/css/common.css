@@ -16,3 +16,33 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  padding-top: 30px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: #3b3b3b;
+
+  border-radius: 5px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  position: relative;
+  text-align: center;
+  padding: 3px;
+  background-color: rgba(133, 136, 135, 0.6);
+  border-radius: 5px;
+  font-size: 24px;
+}
