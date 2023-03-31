@@ -1,6 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 require('flatpickr/dist/themes/dark.css');
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
   btnStart: document.querySelector('[data-start]'),
@@ -19,11 +20,14 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  minDate: 'today',
+  // minDate: 'today',
 
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
-      window.alert('Please choose a date in the future');
+      Notify.failure('Please choose a date in the future', {
+        timeout: 1500,
+        width: '400px',
+      });
       refs.btnStart.disabled = true;
     } else {
       refs.btnStart.disabled = false;
