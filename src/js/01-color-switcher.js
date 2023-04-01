@@ -4,7 +4,7 @@ const body = document.querySelector('body');
 
 btnStart.addEventListener('click', StartChangeColor);
 btnClose.addEventListener('click', StopChangeColor);
-
+let timerId = null;
 function StartChangeColor() {
   timerId = setInterval(changeColor, 1000);
   btnStart.setAttribute('disabled', '');
