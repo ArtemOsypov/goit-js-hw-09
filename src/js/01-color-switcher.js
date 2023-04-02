@@ -2,15 +2,17 @@ const btnStart = document.querySelector('[data-start]');
 const btnClose = document.querySelector('[data-stop]');
 const body = document.querySelector('body');
 
-btnStart.addEventListener('click', StartChangeColor);
-btnClose.addEventListener('click', StopChangeColor);
+btnStart.addEventListener('click', startChangeColor);
+btnClose.addEventListener('click', stopChangeColor);
+
 let timerId = null;
-function StartChangeColor() {
+
+function startChangeColor() {
   timerId = setInterval(changeColor, 1000);
   btnStart.setAttribute('disabled', '');
 }
 
-function StopChangeColor() {
+function stopChangeColor() {
   btnStart.removeAttribute('disabled');
   clearInterval(timerId);
 }

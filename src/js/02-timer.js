@@ -23,7 +23,7 @@ const options = {
   // minDate: 'today',
 
   onClose(selectedDates) {
-    if (selectedDates[0] < new Date()) {
+    if (selectedDates[0] < Date.now()) {
       Notify.failure('Please choose a date in the future', {
         timeout: 1500,
         width: '400px',
@@ -41,7 +41,7 @@ function onBtnStartClick() {
   const selectedDate = fp.selectedDates[0];
 
   timerId = setInterval(() => {
-    const startTime = new Date();
+    const startTime = Date.now();
     const countdown = selectedDate - startTime;
     refs.btnStart.disabled = true;
 
