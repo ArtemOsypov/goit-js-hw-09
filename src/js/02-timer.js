@@ -22,8 +22,8 @@ const options = {
   minuteIncrement: 1,
   // minDate: 'today',
 
-  onClose(selectedDates) {
-    if (selectedDates[0] < Date.now()) {
+  onClose([selectedTime, ...args]) {
+    if (selectedTime < Date.now()) {
       Notify.failure('Please choose a date in the future', {
         timeout: 1500,
         width: '400px',
